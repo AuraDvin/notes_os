@@ -1,0 +1,216 @@
+~ je domači imenik trenutnega uporabnika
+/ je koreninski imenik sistema
+
+
+
+
+
+
+1. Ali se nahajamo v domačem directoriju in če ne se prestavimo tja 
+    komanda je pwd
+2. Izpiši vsebino imenika
+    komanda je ls
+3. V imeniku so skrite datoteke! Prikaži jih!
+    skrite imajo na začetku imena "."  
+    za dokumentacijo moramo vedt tip -> preverimo z `type -a ls` 
+        ker je v datotekah uporabimo man (to je output): 
+        ```
+        S(1)                                                                                                         User Commands                                                                                                        LS(1)
+
+        NAME
+               ls - list directory contents
+
+        SYNOPSIS
+               ls [OPTION]... [FILE]...
+
+        DESCRIPTION
+               List information about the FILEs (the current directory by default).  Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+
+               Mandatory arguments to long options are mandatory for short options too.
+
+               -a, --all
+                      do not ignore entries starting with .
+    torej potrebujemo komando `ls -a`, če hočemo več stikal hkrati jih zapišemo skupaj kot `ls -la`. 
+
+4. pojdite v korenski imenik
+    a. z zaporedjem ukazov 
+        aura@aura-virtual-machine:~$ cd ..
+        aura@aura-virtual-machine:/home$ cd .. 
+        aura@aura-virtual-machine:/$ pwd
+        /
+        z cd se vrnemo nazaj ali pa cd ~ 
+    b. Z absolutnim naslavljanjem 
+        cd /
+    c. Z relativnim naslavljanjem
+        cd ../..
+
+5. Gremo iz korena nazaj v home
+    a. Zaporedni koraki 
+        cd home
+        cd aura
+    b. Z absolut
+        cd /home/aura
+    c. Relativno pot
+        cd home/aura
+    d. Najhitreje
+        cd ali cd ~
+6. Gremo v imenik /etc/init.d
+    a.
+        cd /
+        cd etc
+        cd init.d
+    b. 
+        cd /ect/init.d
+    c.
+        cd ../../ect/init.d
+7. Izpiši drevo koreninskega imenika globine 2. Potem pa še samo imenike 
+    tree -L 2 /
+    tree -L 2 -d /
+
+
+Windows Users == Linux Home
+Program files == bin, ubin, usbin
+
+interne strukture sistema kot datoteka
+etc -> konfiguracije sistema 
+
+8. 
+9.
+    aura@aura-virtual-machine:~$ mkdir vaje 
+    aura@aura-virtual-machine:~$ cd vaje 
+
+10.
+    aura@aura-virtual-machine:~/vaje$ mkdir OS
+    aura@aura-virtual-machine:~/vaje$ mkdir Os 
+    aura@aura-virtual-machine:~/vaje$ mkdir os 
+    aura@aura-virtual-machine:~/vaje$ ls
+    os  Os  OS
+    aura@aura-virtual-machine:~/vaje$
+    
+11.  
+    aura@aura-virtual-machine:~/vaje$ mkdir operacijski sistemi 
+    aura@aura-virtual-machine:~/vaje$ ls
+    operacijski  os  Os  OS  sistemi
+    aura@aura-virtual-machine:~/vaje$ rmdir operacijski sistemi
+    aura@aura-virtual-machine:~/vaje$ ls
+    os  Os  OS
+    aura@aura-virtual-machine:~/vaje$ mkdir "operacijski sistemi"
+    aura@aura-virtual-machine:~/vaje$ ls
+    'operacijski sistemi'   os   Os   OS
+
+12. V imeniku os ustvari test pri čemer ukaz izvedete iz imenika vaje
+    
+    aura@aura-virtual-machine:~/vaje$ mkdir os/test
+    aura@aura-virtual-machine:~/vaje$ tree
+    .
+    ├── operacijski sistemi
+    ├── os
+    │   └── test
+    ├── Os
+    └── OS
+
+    5 directories, 0 files
+    aura@aura-virtual-machine:~/vaje$ tree
+    .
+    ├── operacijski sistemi
+    ├── os
+    ├── Os
+    └── OS
+    4 directories, 0 files
+
+    če hočemo zbrisat še starše rabiš -p oz. --parents
+    
+
+13. Z eno komando zbriši vse
+    aura@aura-virtual-machine:~/vaje$ rmdir -p os/test
+    aura@aura-virtual-machine:~/vaje$ tree
+    .
+    ├── operacijski sistemi
+    ├── Os
+    └── OS
+
+    3 directories, 0 files
+
+14. Naredi vaje.txt
+    touch vaje.txt
+    touch je za to da nastavimo čas spremembe
+
+17. Kopiraj in preimenuj
+    aura@aura-virtual-machine:~/vaje$ cp vaje.txt OS/vaje2.txt
+    aura@aura-virtual-machine:~/vaje$ tree
+    .
+    ├── operacijski sistemi
+    ├── Os
+    ├── OS
+    │   ├── vaje2.txt
+    │   └── vaje.txt
+    └── vaje.txt
+
+    3 directories, 3 files
+
+18. vaje.txt -> vaje3
+    mv vaje.txt vaje3
+
+19. naredi imenik vaje3
+    aura@aura-virtual-machine:~/vaje$ mkdir vaje3
+    mkdir: cannot create directory ‘vaje3’: File exists
+
+20. kopiraj vaje3 v vaje3.txt
+    cp vaje3 vaje3.txt
+
+21. Kopiraj vse iz OS v Os 
+    cp OS/* Os
+    .
+    ├── operacijski sistemi
+    ├── Os
+    │   ├── vaje2.txt
+    │   └── vaje.txt
+    ├── OS
+    │   ├── vaje2.txt
+    │   └── vaje.txt
+    ├── test3.txt
+    └── vaje3
+
+22. Vsebina celotnega imenika Os v OS 
+    aura@aura-virtual-machine:~/vaje$ mv Os OS
+    aura@aura-virtual-machine:~/vaje$ tree
+    .
+    ├── operacijski sistemi
+    ├── OS
+    │   ├── Os
+    │   │   ├── vaje2.txt
+    │   │   └── vaje.txt
+    │   ├── vaje2.txt
+    │   └── vaje.txt
+    ├── test3.txt
+    └── vaje3
+
+23. V operacijski sistemi prekopiramo vse v OS
+    pri kopiranju ignorira imenike, moramo dat -r (recursive)
+    aura@aura-virtual-machine:~/vaje$ cp -r OS/* operacijski\ sistemi/
+    aura@aura-virtual-machine:~/vaje$ tree
+    .
+    ├── operacijski sistemi
+    │   ├── Os
+    │   │   ├── vaje2.txt
+    │   │   └── vaje.txt
+    │   ├── vaje2.txt
+    │   └── vaje.txt
+    ├── OS
+    │   ├── Os
+    │   │   ├── vaje2.txt
+    │   │   └── vaje.txt
+    │   ├── vaje2.txt
+    │   └── vaje.txt
+    ├── test3.txt
+    └── vaje3
+
+    4 directories, 10 files
+
+24. Izbriši vse kar vsebuje 3 
+aura@aura-virtual-machine:~/vaje$ rm -i *3*
+rm: remove regular empty file 'test3.txt'? y
+rm: remove regular empty file 'vaje3'? y
+aura@aura-virtual-machine:~/vaje$ 
+
+
