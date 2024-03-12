@@ -34,6 +34,6 @@ id uporabnik -> Tista skupina kjer piše gid je primarna skupina
 
 
 # Ustvarjanje uporabnika
-useradd
+useradd -d /home/miha -p 1234 miha
 
 
