@@ -1,0 +1,39 @@
+Na sistemu imamo več uporabnikov zato moramo bit prepričani da ni med njimi konfliktov
+    user -> uid
+    groups -> gid
+Vsak uporabnik je član skupine istega imena 
+        aura@aura-virtual-machine:~$ whoami
+        aura
+        aura@aura-virtual-machine:~$ groups
+        aura adm cdrom sudo dip plugdev lpadmin sambashare
+
+Ctrl + Alt + F[1-7] -> CLI environmend (7 returns to the GUI)
+
+sudo -> Switch User & DO 
+permission _      _ _ _  _ _ _  _ _ _ 
+           link, author, group, other
+
+
+Če pogledamo geslo vidimo nekaj takega
+$ 6 $ sol $ hash
+sol je generirana ko ustvarimo geslo -> isto geslo da drugačen hash
+
+
+Za gesla: 
+
+sudo cat /etc/shadow
+cat /etc/passwd 
+cat /etc/group
+cut -d delimiter -f field1, field2, fieldn file 
+
+
+grep -> Vrne vrstico/-e okol vzorca 
+
+groups uporabnik -> Vse skupine kjer je ta not
+id uporabnik -> Tista skupina kjer piše gid je primarna skupina
+
+
+# Ustvarjanje uporabnika
+useradd
+
+

@@ -1,0 +1,9 @@
+1. ls ~
+
+aura@aura-virtual-machine:~/Documents/Zapiski$ ls ~
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  vaje  Videos
+aura@aura-virtual-machine:~/Documents/Zapiski$ echo $?
+0
+
+2. ls /os 
+

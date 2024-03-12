@@ -213,4 +213,20 @@ rm: remove regular empty file 'test3.txt'? y
 rm: remove regular empty file 'vaje3'? y
 aura@aura-virtual-machine:~/vaje$ 
 
+# 2. vaje 
+
+#!/
+povemo za kater interpreter bo bash datoteka 
+primer
+#!/bin/bash
+
+Problem je da ne moremo še izvajat te bash datoteke
+To naredimo z ukazom chmod +x <datoteka>
+z ls -la lahko vidimo katere pravice ima datoteka
+
+ustvarimo mehko povezavo tako 
+ln -s <datoteka> ime povezave 
+ln -s /etc konfiguracije 
+
+
 
