@@ -1,0 +1,73 @@
+Bourne Again SHell 
+lupina za ukaze 
+    skriptni jezik 
+        omogoča v celoti uporabljati zmožnost ljpine 
+        avtomatizacija opravil 
+
+bash -x skirpta.sh asd 123 arg3
+
+podniz
+    ${a:4:5} od 4. znaka 5 naprej 
+    ${a:(-6):5} od zadi 6. znak, 5 naprej
+
+Podniz k se umeja. Prvič ko se pojavi ali zadnjič 
+
+aura@aura-virtual-machine:~/Documents/Zapiski/tretji_teden$ a='To je test, 123, 123.'
+aura@aura-virtual-machine:~/Documents/Zapiski/tretji_teden$ echo ${a#* }
+je test, 123, 123.
+aura@aura-virtual-machine:~/Documents/Zapiski/tretji_teden$ echo ${a##* }
+123.
+#####################################################################################
+Komanda test
+
+-e datoteka -> obstaja?
+aura@aura-virtual-machine:~/Documents/Zapiski/tretji_teden$ test -e skriptaa.sh && echo "sucess" || echo "epic fail"
+epic fail
+aura@aura-virtual-machine:~/Documents/Zapiski/tretji_teden$ test -e skripta.sh && echo "sucess" || echo "epic fail"
+sucess
+
+enakost števil 
+x -eq y
+
+aura@aura-virtual-machine:~/Documents/Zapiski/tretji_teden$ test 14 -eq 13; echo $?;
+1
+aura@aura-virtual-machine:~/Documents/Zapiski/tretji_teden$ test 14 -eq 14; echo $?;
+0
+
+enakost nizov 
+aura@aura-virtual-machine:~/Documents/Zapiski/tretji_teden$ test asd = asd; echo $?
+0
+aura@aura-virtual-machine:~/Documents/Zapiski/tretji_teden$ test asd = aasd; echo $?
+1
+
+[ 5 -eq 5 ] -> tudi kot test
+
+[[ abc = *b* ]] -> tudi, "ali vsebuje niz crko b"
+
+
+
+$0 ime bash skripte
+$1 - $9 arguenti 
+$# stevilo argumentov 
+$@ vsi arguenti
+$$ PID
+$USER
+$HOSTNAME
+$SECONDS
+$RANDOM
+$LINENO current line number
+
+aura@aura-virtual-machine:~/Documents/Zapiski/tretji_teden$ z=$(expr 2 + 3)
+aura@aura-virtual-machine:~/Documents/Zapiski/tretji_teden$ echo $z
+5
+aura@aura-virtual-machine:~/Documents/Zapiski/tretji_teden$ z=$(( 2 + 3 ))
+aura@aura-virtual-machine:~/Documents/Zapiski/tretji_teden$ echo $z
+5
+
+na kolokviju samo osnovna aritmetika*lss h
+
+
+
+
+
+

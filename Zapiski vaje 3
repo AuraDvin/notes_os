@@ -15,9 +15,13 @@ permission _      _ _ _  _ _ _  _ _ _
 
 
 Če pogledamo geslo vidimo nekaj takega
-$ 6 $ sol $ hash
+$ 6 $ sol $ hash (sha hashing) 
+$ y $ vhodni param $ sol $ hash (yescrypt)
 sol je generirana ko ustvarimo geslo -> isto geslo da drugačen hash
 
+groupadd ime skupine 
+
+Včlanimo miho v skupino aura in uporabniki
 
 Za gesla: 
 
@@ -35,5 +39,42 @@ id uporabnik -> Tista skupina kjer piše gid je primarna skupina
 
 # Ustvarjanje uporabnika
 useradd -d /home/miha -p 1234 miha
+
+aura@aura-virtual-machine:~/Documents/Zapiski$ sudo useradd -d /home/miha -m -p $(mkpasswd) miha 
+Password: 
+aura@aura-virtual-machine:~/Documents/Zapiski$ sudo grep "miha" /etc/shadow
+miha:$y$j9T$ft63XSLN5WwYsA82UiQ5h1$4d75sc.8aJjUw29WeNWVOi/fVYsTENqavA/1VAL7rb5:19794:0:99999:7:::
+
+sudo usermod -aG uporbniki,aura miha
+grep "miha" /etc/group
+
+ura@aura-virtual-machine:~$ sudo usermod -aG sudo miha
+aura@aura-virtual-machine:~$ su miha
+Password: 
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+zaklenemo iz sistema 
+sudo passwd -l miha
+    Uresnici da en ! pred celim geslom in ko primerja se ne bo mogel vpisati 
+
+sudo passwd -u miha 
+    Unlocks account
+
+-rw-rw-r-- miha miha 0  
+    -> miha lahko bere in piše tako kot vsi so v skupini 
+    -> ostali ne morejo pisati v datoteko lahko jo pa berejo 
+
+
+getfacl datoteka 
+setfacl [-x za zbrisat] "u:aura:wr" datoteka
+za imenike chmod +t pomeni sticky bit -> uporabniki ne morejo brisati datotek drugih uporabnikov
+
+
+
+
+660 -> rw-rw----
+720 -> rwx-w----
+100 -> --x------
 
 
