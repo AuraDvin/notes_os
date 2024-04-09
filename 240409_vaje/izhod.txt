@@ -1,1 +1,6 @@
 /home/aura/Documents/Zapiski/240409_vaje
+total 16
+-rw-rw-r-- 1 aura aura  41 Apr  9 07:46 izhod.txt
+-rw-rw-r-- 1 aura aura  13 Apr  9 07:42 test.sh
+-rw-rw-r-- 1 aura aura   6 Apr  9 07:49 vhod.txt
+-rw-rw-r-- 1 aura aura 345 Apr  9 07:50 zapiski_danes

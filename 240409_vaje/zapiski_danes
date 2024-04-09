@@ -1,4 +1,13 @@
-Vsak ukaz ima vhode in izhode stdout 1, stdin 0. Ko vpišemo ukaz v terminal, uporabi za vpis in izpis terminal (ukaz tty)
+Vsak ukaz ima vhode in izhode stdout 1, stdin 0, stderr 2. 
+	Ko vpišemo ukaz v terminal, uporabi za vpis in izpis terminal (ukaz tty)
 ukaz < datoteka -> standardni vhod 
 ukaz > datoteka -> standardni izhod 
-ukaz >> datoteka-> doda na koncu datoteke 
+ukaz >> datoteka-> doda na koncu datoteke (standardni izhod)
+
+Ko uporabimo standardni izhod nam ne izpiše v terminal. 
+	Ko je napaka gre skozi stderr  
+
+Razlika obstaja med argumenti in standardnim vhodom! 
+Primer:
+	ls -l <vhod.txt 
+	čisto ignorira zapis v datoteki!

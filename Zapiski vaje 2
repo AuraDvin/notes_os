@@ -1,13 +1,9 @@
 ~ je domači imenik trenutnega uporabnika
 / je koreninski imenik sistema
 
-
-
-
-
-
 1. Ali se nahajamo v domačem directoriju in če ne se prestavimo tja 
     komanda je pwd
+    da se premaknemo v home pa komando cd
 2. Izpiši vsebino imenika
     komanda je ls
 3. V imeniku so skrite datoteke! Prikaži jih!
