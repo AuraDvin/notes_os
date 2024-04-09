@@ -27,3 +27,50 @@ Da izberemo stderr napišemo številko 2
 
 	ls -l &>izhod.txt 
 	preusmeri vse tokove v isto datoteko
+
+aura@aura-virtual-machine:~/Documents/Zapiski/240409_vaje$ cat vhod.txt 
+/etc/
+aura@aura-virtual-machine:~/Documents/Zapiski/240409_vaje$ cat <vhod.txt 
+/etc/
+
+cat dobi argument -> sam odpre datoteko in izpiše 
+cat < datoteka -> kot cat brez argumentov gleda standardni vhod (stdin) kjer uporabmo preusmeritev 
+cat > datoteka -> lahko vpišemo v datoteko preko cat 🐱️
+	fyi; cat je za concat datotek in izpis na stdout 
+	torej daš več datotek v argument in pol dobiš vse združeno na stdout
+cat << konec 
+	preusmermo stdout ampak preusmerno v to kar bomo zdej vpisal, dokler ne vpišemo "konec"
+aura@aura-virtual-machine:~/Documents/Zapiski/240409_vaje$ cat <<konec
+> hello everybody
+> my name 
+> is Markieplier
+> and welcome 
+> to Five nights at Freddies 
+> a game 
+> reccomended by you 
+> the audience
+> konec
+hello everybody
+my name 
+is Markieplier
+and welcome 
+to Five nights at Freddies 
+a game 
+reccomended by you 
+the audience
+
+
+cat tudi preveri da nista isti datoeki ki se bereta in izpisujeta 
+
+
+/dev/null 
+navidezna datoteka
+	(/dev/ -> devices)
+	kar notr napišemo se ne shrani nikamor
+
+# Cevovod
+Če hočemo hkrati vpisovat z cat >a.txt in brat cat < a.txt ampak da ne zaženemo cat <a.txt 
+    mkfifo testpipe
+    FiFo nima EOF (end of file) in zato se čist chillamo pa se cat izvaja dokler ne zapremo cat na prvem terminalu z ctrl+D
+
+ 
