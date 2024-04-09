@@ -73,4 +73,6 @@ navidezna datoteka
     mkfifo testpipe
     FiFo nima EOF (end of file) in zato se čist chillamo pa se cat izvaja dokler ne zapremo cat na prvem terminalu z ctrl+D
 
+stdout enega ukaza damo stdin drugemu ukazu
+
  
