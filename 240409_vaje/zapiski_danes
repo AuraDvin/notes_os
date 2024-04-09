@@ -75,4 +75,8 @@ navidezna datoteka
 
 stdout enega ukaza damo stdin drugemu ukazu
 
+
+5 največjih datotek 
+
+find ./ -type f -exec stat -c '%s $n' {} + | sort -r -n | head -5  
  
