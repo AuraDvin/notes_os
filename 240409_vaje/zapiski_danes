@@ -11,3 +11,19 @@ Razlika obstaja med argumenti in standardnim vhodom!
 Primer:
 	ls -l <vhod.txt 
 	čisto ignorira zapis v datoteki!
+
+Da izberemo stderr napišemo številko 2 
+	ls -ž 2>napaka.txt -> stderr
+	ls -l > napaka.txt -> stdout
+
+	ls -l >izhod.txt 2>napaka.txt 
+	če daš isto datoteko bo izpisal oboje v datoteko txt 
+
+	ls -l >izhod.txt 2>&1
+	stderr preusmerjen v tam kamor kaže tok 1 (stdout) -> vezana na isto datoteko
+
+	ls -l 2>&1 1>izhod.txt 
+	napaka se izpiše v terminal ker gre od leve proti desni!
+
+	ls -l &>izhod.txt 
+	preusmeri vse tokove v isto datoteko
