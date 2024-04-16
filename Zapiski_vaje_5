@@ -1,0 +1,4 @@
+Poiščite vse imenike, ki imajo lepljivi bit in pravico pisanja za ostale uporabnike
+    sudo find / -type d -perm -1002 
+sudo find / -inum $(stat neki.txt -c %i) -exec rm {} \;
+Zbriši vse datoteke, ki kažejo na isti inode

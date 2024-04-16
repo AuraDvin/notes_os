@@ -1,0 +1,86 @@
+xargs -> standardni vhod to arguments 
+  tee -> preusmerimo v več različnih smeri
+
+Trenutno prijavljeni uporabniki
+    * users -> samo ime
+    * who   -> malo več podrobnosti
+    * w     -> še več podrobnosti
+
+who | grep -w "administrator" 
+    pogleda če najde celo besedo "administrator", če bi iskali admin bi ga brez -w najdel tudi če bi bil prijavljen samo administrator
+
+who | cut -d " " -f 1 | grep -w "administrator" 
+    najprej odreže samo imena ker razdeli na stolpce glede na " ". 
+
+Kako preštejemo koliko je uporabnikov prijavljenih v sistem 
+    * uporabimo ukaz word-count (aka wc -l)... l je za število vrstic
+        who | wc -l
+    Koliko posameznih uporabnikov je prijavljenih? 
+        who | cut -d " " -f 1 | sort | uniq -c 
+
+Število datotek v trenutnem imeniku
+    ls | wc -l
+
+grep -> vrne vrstico kjer nekaj najde 
+nl -> oštevilči vrstice 
+
+split -> text razdeli v več datotek 
+
+tree / | split -l 1000 -a 3 -d - drevo_
+    tale izraz najprej pogleda vse direktorije na sistemu 
+    razdeli v datoteke po 1000 vrstic 
+    suffix je dolžine 3 in numeričen
+    - pomeni da ne bere datoteke ampak standardni vhod  
+    datoteke imajo prefix "drevo_" 
+
+wc drevo_000
+1000    4726    42540   drevo_000
+
+za vse datoteke v direktoriju 
+
+ls | xargs wc 
+    kaj če bi sprejel samo 1 argument 
+ls | xargs -I {} wc {}
+    ta požene wc n-krat z enim argumentom 
+
+z xargs-om ne moremo interaktivno delat z ukazom 
+lahko pa z xargs delamo interaktivno
+    find . -inum $(stat test.txt -c '%i') | xargs -p -I {} rm {}
+Za vsako povezavo vprašaj če jo hočem zbrisat
+
+
+cmp     -> pove kjer se datoteki prvič razlikujeta 
+diff    -> pove vse lokacije kjer se razlikujeta
+    enaki -> echo $? -> 0
+
+aura@aura-virtual-machine:~/vaje9$ cmp server.conf server.conf.bak &> /dev/null && rm server.conf.bak && echo "brisanje" 
+aura@aura-virtual-machine:~/vaje9$ echo "neki" > server.conf.bak 
+aura@aura-virtual-machine:~/vaje9$ cmp server.conf server.conf.bak &> /dev/null && rm server.conf.bak && echo "brisanje" 
+brisanje
+
+cat /etc/passwd | column -s ":" -t
+
+cat /etc/passwd | column -s ":" -t | tee uporabniki.txt uporabniki_arhiv.txt 
+    pošlje na standardni izhod in vse datoteke k jih navedemo
+
+
+aura@aura-virtual-machine:~/Documents/Zapiski/240416_vaje$ cat /dev/urandom | tr -d -c [:alnum:] | head -c 20 | xargs echo
+Xy7UhJdOsBFNeyDFwbpa
+
+naredi random geslo iz alfanumeričnih znakov 
+    * dobi random znake 
+    * zbriše vse ki niso alfanumerični 
+    * vzame prvih 20 bajtov izpisa
+    * izpiše v novo vrstico 
+tr -d -c [:alnum:] < /dev/urandom | head -c 20 | xargs echo
+s4mDYaPYLPZWviSCF34d
+
+xargs brez argumenta je isto kot "xargs echo" 
+ 
+
+
+
+
+
+
+
