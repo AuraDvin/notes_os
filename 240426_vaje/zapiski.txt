@@ -8,6 +8,16 @@ Ukazi teh vaj:
     * get PID of a proces using it's name 
     * get PID of a proces using a regex (i. e. .sh -> kar se konča z sh)
 * ps, top, pstree
+    * ps izpiše samo te procese ki smo zagnali iz tega terminala
+        * za vse potrebujemo zastavico -e
+        * -u user
+        * -l -> več podatkov
+    * top == task manager
+        * h -> help
+        * u -> type in user
+        * k -> type in PID to kill :D  
+    * ko zaženemo sistem se zažene systemd -> vsi ostali procesi so potomci tega 
+        * -u za uporabnika 
 * jobs, fg, bg 
 * kill, pkill, killall
 * sleep 
@@ -16,3 +26,8 @@ Ukazi teh vaj:
 
 PID trenutnega terminala (bash ki trenutno dela v terminalu) 
     pid=$$
+
+Trenutno vseh procesov 
+ps -e | echo $(($(wc -l) -2))
+    * -2 ker zaženemo še wc -l in echo 
+
