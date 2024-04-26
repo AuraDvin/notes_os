@@ -1,0 +1,17 @@
+aura@aura-virtual-machine:/proc$ cat cmdline 
+BOOT_IMAGE=/boot/vmlinuz-5.15.0-102-generic root=UUID=06bc40f8-5f1f-4c3c-b62c-cbb8660f3adc ro quiet splash
+
+/proc/PID 
+
+Ukazi teh vaj: 
+* pidof, pgrep
+    * get PID of a proces using it's name 
+    * get PID of a proces using a regex (i. e. .sh -> kar se konča z sh)
+* ps, top, pstree
+* jobs, fg, bg 
+* kill, pkill, killall
+* sleep 
+* wait
+* nice, renice
+
+
