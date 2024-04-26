@@ -7,7 +7,7 @@ Ukazi teh vaj:
 * pidof, pgrep
     * get PID of a proces using it's name 
     * get PID of a proces using a regex (i. e. .sh -> kar se konča z sh)
-* ps, top, pstree
+* ps, top, pstree (also htop is nice)
     * ps izpiše samo te procese ki smo zagnali iz tega terminala
         * za vse potrebujemo zastavico -e
         * -u user
@@ -19,6 +19,7 @@ Ukazi teh vaj:
     * ko zaženemo sistem se zažene systemd -> vsi ostali procesi so potomci tega 
         * -u za uporabnika 
 * jobs, fg, bg 
+    
 * kill, pkill, killall
 * sleep 
 * wait
@@ -30,4 +31,46 @@ PID trenutnega terminala (bash ki trenutno dela v terminalu)
 Trenutno vseh procesov 
 ps -e | echo $(($(wc -l) -2))
     * -2 ker zaženemo še wc -l in echo 
+
+aura@aura-virtual-machine:~$ pstree $$
+bash─┬─pstree
+     └─13*[xeyes]
+
+aura@aura-virtual-machine:~/Documents/Zapiski/240426_vaje$ cd /proc
+aura@aura-virtual-machine:/proc$ cd 19242
+aura@aura-virtual-machine:/proc/19242$ ls
+arch_status  comm                fd         maps        numa_maps      projid_map  smaps_rollup  timens_offsets
+attr         coredump_filter     fdinfo     mem         oom_adj        root        stack         timers
+autogroup    cpu_resctrl_groups  gid_map    mountinfo   oom_score      sched       stat          timerslack_ns
+auxv         cpuset              io         mounts      oom_score_adj  schedstat   statm         uid_map
+cgroup       cwd                 limits     mountstats  pagemap        sessionid   status        wchan
+clear_refs   environ             loginuid   net         patch_state    setgroups   syscall
+cmdline      exe                 map_files  ns          personality    smaps       task
+
+
+/proc/PID/fd/ -> standardni vhod/izhod/error
+0 -> vhod
+1 -> izhod 
+2 -> error
+
+če ima ukaz še argumente ki so datoteke ima lahko tudi več številk (npr cat < testfifo | tee c d) bosta datoteki c 3 in d 4. 
+
+
+cat /proc/PID/environ -> environment
+    okoljske spremenljivke za ta proces 
+cat /proc/PID/status
+    grep -i ppid 
+    -> nam pove PID starša tega procesa
+
+readlink /proc/PID/exe -> pove kater ukaz se je pognal 
+cat /proc/PID/cmdline | tr "\0" "\n" -> pokaže točno kako smo pognali ukaz ("tee c d" but newLines instead of spaces) 
+
+
+
+
+
+
+
+
+
 
