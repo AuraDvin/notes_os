@@ -19,7 +19,9 @@ Ukazi teh vaj:
     * ko zaženemo sistem se zažene systemd -> vsi ostali procesi so potomci tega 
         * -u za uporabnika 
 * jobs, fg, bg 
-    
+    * processes running in the current terminal
+    * foreground
+    * background
 * kill, pkill, killall
 * sleep 
 * wait
@@ -66,8 +68,22 @@ readlink /proc/PID/exe -> pove kater ukaz se je pognal
 cat /proc/PID/cmdline | tr "\0" "\n" -> pokaže točno kako smo pognali ukaz ("tee c d" but newLines instead of spaces) 
 
 
+Signali
+npr. Brezpogojno prekinitev procesa
 
 
+
+Ctrl+Z -> stop job in foreground (fg job) 
+Ctrl+Z -> quit process in foreground (fg job) 
+
+job ali job id 
+name, %id
+gedit %1 -> če ko poženeš jobs je zraven tega 1 
+
+
+
+disown ni več child trenutnega procesa
+nohup zaženemo kot ne-child
 
 
 
