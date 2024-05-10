@@ -1,0 +1,6 @@
+traps
+
+trap akcija signal 
+trap -l
+
+trap sorry INT # sorry je funkcija k se izvede pri tem signalu
