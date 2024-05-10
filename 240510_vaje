@@ -33,5 +33,6 @@ df, du
    kjer je mountan device
    -h -> Gibi bajti
    -H -> GB (10^x)
+   du -sh (sum, human readable)
 lsblk -> list block devices(usb)
 
