@@ -28,7 +28,7 @@ cron, crontab
    na neko periodo/vsak dan ob isti uri
    crontab -e -> editaš file
 mount, umount
-    za usbje
+    za usbje (drugi datotečni sistemi)
 df, du
    kjer je mountan device
 
