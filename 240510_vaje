@@ -26,6 +26,7 @@ at, atq, atrm
    zbrišemo at
 cron, crontab
    na neko periodo/vsak dan ob isti uri
+   crontab -e -> editaš file
 mount, umount
     za usbje
 df, du
