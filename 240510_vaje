@@ -4,3 +4,28 @@ trap akcija signal
 trap -l
 
 trap sorry INT # sorry je funkcija k se izvede pri tem signalu
+
+# Kriticni odsek
+
+Datotecni semafor 
+caka dokler datoteka se obstaja 
+touch file.lock 
+rm -f file.lock
+
+obstaja tudi lockfile
+
+## flock 
+
+( flock 200
+  ...
+  )200>semafor.lock
+
+at, atq, atrm
+   določen čas 
+cron, crontab
+   na neko periodo/vsak dan ob isti uri
+mount, umount
+    za usbje
+df, du
+
+
