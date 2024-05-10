@@ -30,6 +30,7 @@ cron, crontab
 mount, umount
     za usbje
 df, du
+   kjer je mountan device
 
 lsblk -> list block devices(usb)
 
