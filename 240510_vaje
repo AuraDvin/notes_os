@@ -31,4 +31,5 @@ mount, umount
     za usbje
 df, du
 
+lsblk -> list block devices(usb)
 
