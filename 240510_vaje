@@ -22,6 +22,8 @@ obstaja tudi lockfile
 
 at, atq, atrm
    določen čas 
+   čakalna vrsta
+   zbrišemo at
 cron, crontab
    na neko periodo/vsak dan ob isti uri
 mount, umount
