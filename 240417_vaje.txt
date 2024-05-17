@@ -9,6 +9,7 @@ $ konec vrstice
 [nabor znakov] -> katerkol od teh znakov
 [abcd] -> abcd
 [a-ž] -> abcčdefghijklmnopqrsštuvwxyzž -> odvisno od locale 
+(ab) -> dobesedno "ab" 
 
 . -> vsi znaki (tudi presledek) ampak samo ne newline (\n)
 
@@ -18,4 +19,6 @@ $ konec vrstice
 {n}    -> n
 {n,}   -> n, infin
 {n, m} -> n, m
+
+
 
