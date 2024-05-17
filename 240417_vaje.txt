@@ -27,5 +27,11 @@ $ konec vrstice
 {n,}   -> n, infin
 {n, m} -> n, m
 
+Za regex uporabljamo ukaz 
+    grep -E <regex> 
+        aka extended
+        lahko tudi -C <stevilo vrstic> 
+
+
 
 
