@@ -5,6 +5,13 @@ $ konec vrstice
 \<beseda\> beseda kot cela beseda 
 \b rob besede -> zečetek besede -> tudi \<
 \B znotraj besede (ne rob besede, aka komplement \b)
+\w alfanumerični znaki in "_"
+\a črke
+\l male črke
+\p vidni znaki 
+\s space/presledki [\t\r\n\v\f]
+\u velike črke 
+\x hex številke 
 
 [nabor znakov] -> katerkol od teh znakov
 [abcd] -> abcd
