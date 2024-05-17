@@ -1,12 +1,21 @@
 Regularni izrazi 
 
-^ začetek besede 
-$ konec besede
+^ začetek vrstice
+$ konec vrstice
 \<beseda\> beseda kot cela beseda 
 \b rob besede -> zečetek besede -> tudi \<
 \B znotraj besede (ne rob besede, aka komplement \b)
 
 [nabor znakov] -> katerkol od teh znakov
 [abcd] -> abcd
-[a-ž] -> abcčdefghijklmnopqrsštuvwxyzž
+[a-ž] -> abcčdefghijklmnopqrsštuvwxyzž -> odvisno od locale 
+
+. -> vsi znaki (tudi presledek) ampak samo ne newline (\n)
+
+?      -> 0, 1 
+*      -> 0, n
++      -> 1, n 
+{n}    -> n
+{n,}   -> n, infin
+{n, m} -> n, m
 
