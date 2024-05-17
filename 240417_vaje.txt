@@ -33,5 +33,6 @@ Za regex uporabljamo ukaz
         lahko tudi -C <stevilo vrstic> 
 
 
-
+"th.*s" -> longest match (the info and grep programs are properly ins)
+"th[^s]*s" -> match anything not s -> shortest matching
 
