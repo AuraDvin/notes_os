@@ -1,0 +1,7 @@
+Regularni izrazi 
+^ začetek 
+$ konec 
+\<beseda\> beseda kot cela beseda 
+\b rob besede 
+\B znotraj besede (ne rob besede)
+
