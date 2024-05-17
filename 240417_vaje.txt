@@ -35,4 +35,20 @@ Za regex uporabljamo ukaz
 
 "th.*s" -> longest match (the info and grep programs are properly ins)
 "th[^s]*s" -> match anything not s -> shortest matching
+(\w+)\1 -> se še enkrat ponovljen
+\<([^ ]+)[ ]+\1 -> nepresledek (vsaj 1) in presledek (vsaj 1); nepresledek ponovljen še enkrat (zadnji oklepaj)
+([0-9]{1,3}\.)[0-9]{1,3}\2 -> kt ip ampak sus 
+
+SED 
+
+s/stari niz/novi niz/zastave  -> zamenjava
+"od vrstice, do vrstice d"  -> brisanje
+"/vzorec vrstice/ d"      -> brisanje
+
+Zastavice:
+    * g -> vse pojavitve
+
+
+
+
 
